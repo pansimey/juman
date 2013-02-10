@@ -2,6 +2,10 @@
 
 Description goes here.
 
+== ToDo
+
+* 活用モジュールをつくって、活用のある形態素オブジェクトを活用させられるようにする
+
 == Contributing to juman
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
