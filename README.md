@@ -1,6 +1,6 @@
 # Juman
 
-TODO: Write a gem description
+Use a sequence of morphemes as an Enumerable object.
 
 ## Installation
 
