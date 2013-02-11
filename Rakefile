@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "juman"
   gem.homepage = "http://github.com/hadzimme/juman"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{形態素解析器JUMANのRuby用ラッパー}
+  gem.description = %Q{JUMANの解析結果をEnumerableなオブジェクトとして扱う}
   gem.email = "hajime.wakahara@gmail.com"
   gem.authors = ["Hajime WAKAHARA"]
   # dependencies defined in Gemfile
