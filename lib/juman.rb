@@ -1,4 +1,4 @@
-$:.unshift File.expand_path(File.dirname(__FILE__))
+require 'juman/version'
 require 'juman/process'
 require 'juman/result'
 require 'juman/morpheme'
