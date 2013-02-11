@@ -1,6 +1,7 @@
-# coding: UTF-8
+# coding: utf-8
 
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'rspec'
+require 'juman'
 
 describe Juman::Morpheme do
   context "when initialized with a line of the result of '見る'" do
