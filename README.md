@@ -18,14 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'juman'
+```ruby
+require 'juman'
 
-    juman = Juman.new
-    text = 'この文を形態素解析してください。'
-    result = juman.analyze(text)
-    result[0].surface #=> "この"
-    result.map{|morpheme| morpheme.surface }
-    #=> ["この", "文", "を", "形態", "素", "解析", "して", "ください", "。"]
+juman = Juman.new
+text = 'この文を形態素解析してください。'
+result = juman.analyze(text)
+result[0].surface #=> "この"
+result.map{|morpheme| morpheme.surface }
+#=> ["この", "文", "を", "形態", "素", "解析", "して", "ください", "。"]
+```
 
 ## Contributing
 
