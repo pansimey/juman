@@ -1,6 +1,6 @@
 class Juman
   class Morpheme
-    def initialize line
+    def initialize(line)
       attrs = line.split(/\s/)
       @surface, @pronunciation, @base, @pos = attrs.shift(4)
       @pos_id = attrs.shift.to_i
@@ -16,11 +16,11 @@ class Juman
       :pos_spec_id, :type, :type_id, :form, :form_id, :info
 
     private
-    def attr_normalize candidate
+    def attr_normalize(candidate)
       candidate == '*' ? nil : candidate
     end
 
-    def info_normalize candidate
+    def info_normalize(candidate)
       candidate == 'NIL' ? nil : eval(candidate)
     end
   end

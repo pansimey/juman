@@ -1,6 +1,6 @@
 class Juman
   class Process
-    def initialize command
+    def initialize(command)
       fd0, @writer = IO.pipe
       @reader, fd1 = IO.pipe
       spawn(*command.split(/\s/), in: fd0, out: fd1)
@@ -8,7 +8,7 @@ class Juman
       fd1.close
     end
 
-    def puts string
+    def puts(string)
       @writer.puts(string)
     end
 

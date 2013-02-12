@@ -8,7 +8,7 @@ class Juman
     @process = Process.new('juman -e2 -B')
   end
 
-  def analyze text
+  def analyze(text)
     @process.puts(text)
     Result.new(@process.readlines)
   end

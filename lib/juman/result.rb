@@ -1,15 +1,15 @@
 class Juman
   class Result
     include Enumerable
-    def initialize lines
+    def initialize(lines)
       @morphemes = lines.map{|line| Morpheme.new(line) }.freeze
     end
 
-    def each *args, &block
+    def each(*args, &block)
       @morphemes.each *args, &block
     end
 
-    def [] nth
+    def [](nth)
       @morphemes[nth]
     end
 
