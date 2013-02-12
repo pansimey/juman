@@ -4,7 +4,7 @@ require 'rspec'
 require 'juman'
 
 describe Juman::Morpheme do
-  context "when initialized with a line of the result of '見る'" do
+  context 'when initialized with a line of the result of "見る"' do
     subject { Juman::Morpheme.new(
         '見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 "情 報"') }
     its(:surface){ should eq '見る' }
@@ -22,7 +22,7 @@ describe Juman::Morpheme do
   end
 end
 describe Juman::Result do
-  context "when initialized with an Array of the result of '見る'" do
+  context 'when initialized with an Array of the result of "見る"' do
     before { @result = Juman::Result.new(
       ['見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 "情 報"']) }
     subject { @result }
@@ -30,7 +30,7 @@ describe Juman::Result do
     it { should respond_to :each }
     it { should respond_to :[] }
     it { should respond_to :at }
-    describe "#[]" do
+    describe '#[]' do
       context 'when argument 0' do
         subject { @result[0] }
         it 'should return Juman::Morpheme' do
@@ -45,7 +45,7 @@ describe Juman::Result do
           should be_an_instance_of Enumerator
         end
       end
-      context "with block" do
+      context 'with block' do
         subject { @result.each{} }
         it 'should return Array' do
           should be_an_instance_of Array
@@ -65,8 +65,6 @@ describe Juman::Process do
       end
     end
   end
-  context "if wrote '見る' then its returned value" do
-  end
 end
 describe Juman do
   before { @juman = Juman.new }
@@ -82,7 +80,7 @@ describe Juman do
         subject { @result }
         describe '#[]' do
           context 'when argument 0' do
-            it "should return Juman::Morpheme" do
+            it 'should return Juman::Morpheme' do
               @result[0].should be_an_instance_of Juman::Morpheme
             end
           end
