@@ -30,39 +30,64 @@ describe Juman::Result do
     it { should respond_to :each }
     it { should respond_to :[] }
     it { should respond_to :at }
-    context "#[0]" do
-      subject { @result[0] }
-      it { should be_an_instance_of Juman::Morpheme }
+    describe "#[]" do
+      context 'when argument 0' do
+        subject { @result[0] }
+        it 'should return Juman::Morpheme' do
+          should be_an_instance_of Juman::Morpheme
+        end
+      end
     end
-    context "each" do
-      subject { @result.each }
-      it { should be_an_instance_of Enumerator }
-    end
-    context "each{}" do
-      subject { @result.each{} }
-      it { should be_an_instance_of Array }
+    describe '#each' do
+      context 'without block' do
+        subject { @result.each }
+        it 'should return Enumerator' do
+          should be_an_instance_of Enumerator
+        end
+      end
+      context "with block" do
+        subject { @result.each{} }
+        it 'should return Array' do
+          should be_an_instance_of Array
+        end
+      end
     end
   end
 end
 describe Juman::Process do
   before { @process = Juman::Process.new('juman -e2 -B') }
+  describe '#readlines' do
+    context 'when have written "見る"' do
+      before { @process.puts('見る') }
+      subject { @process.readlines }
+      it 'should return Array' do
+        should be_an_instance_of Array
+      end
+    end
+  end
   context "if wrote '見る' then its returned value" do
-    before { @process.puts('見る') }
-    subject { @process.readlines }
-    it { should be_an_instance_of Array }
   end
 end
 describe Juman do
   before { @juman = Juman.new }
   subject { @juman }
   it { should respond_to :analyze }
-  context "#analyze('見る') then returned @result" do
-    before { @result = @juman.analyze('見る') }
-    subject { @result }
-    it { should be_an_instance_of Juman::Result }
-    context "@result[0]" do
-      subject { @result[0] }
-      it { should be_an_instance_of Juman::Morpheme }
+  describe '#analyze' do
+    context 'when argument "見る"' do
+      before { @result = @juman.analyze('見る') }
+      it 'should return Juman::Result' do
+        @result.should be_an_instance_of Juman::Result
+      end
+      describe 'returned Juman::Result' do
+        subject { @result }
+        describe '#[]' do
+          context 'when argument 0' do
+            it "should return Juman::Morpheme" do
+              @result[0].should be_an_instance_of Juman::Morpheme
+            end
+          end
+        end
+      end
     end
   end
 end
