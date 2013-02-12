@@ -6,7 +6,7 @@ class Juman
     end
 
     def each(*args, &block)
-      @morphemes.each *args, &block
+      @morphemes.each(*args, &block)
     end
 
     def [](nth)
