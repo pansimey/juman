@@ -10,7 +10,7 @@ class Juman
     end
 
     def [](nth)
-      @morphemes[nth]
+      return @morphemes[nth]
     end
 
     alias at []

@@ -17,7 +17,7 @@ class Juman
       until (line = @reader.readline)[/^EOS$/]
         lines << line
       end
-      lines
+      return lines
     end
   end
 end

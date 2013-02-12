@@ -16,12 +16,20 @@ class Juman
       :pos_spec_id, :type, :type_id, :form, :form_id, :info
 
     private
-    def attr_normalize(candidate)
-      candidate == '*' ? nil : candidate
+    def normalize_attr(candidate)
+      if candidate == '*'
+        return nil
+      else
+        return candidate
+      end
     end
 
-    def info_normalize(candidate)
-      candidate == 'NIL' ? nil : eval(candidate)
+    def normalize_info(candidate)
+      if candidate == 'NIL'
+        return nil
+      else
+        return eval(candidate)
+      end
     end
   end
 end

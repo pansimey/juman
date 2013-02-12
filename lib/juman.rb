@@ -10,6 +10,6 @@ class Juman
 
   def analyze(text)
     @process.puts(text)
-    Result.new(@process.readlines)
+    return Result.new(@process.readlines)
   end
 end
