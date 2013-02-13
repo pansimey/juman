@@ -6,7 +6,7 @@ class Juman
     end
 
     def each(&block)
-      return self.enum_for(__method__) unless block_given?
+      return self.to_enum unless block_given?
       @morphemes.each(&block)
       return self
     end
