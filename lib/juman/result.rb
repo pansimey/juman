@@ -5,9 +5,9 @@ class Juman
       @morphemes = lines.map{|line| Morpheme.new(line) }.freeze
     end
 
-    def each(*args, &block)
-      return @morphemes.each(*args) unless block_given?
-      @morphemes.each(*args, &block)
+    def each(&block)
+      return @morphemes.each unless block_given?
+      @morphemes.each(&block)
       return self
     end
 
