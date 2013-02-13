@@ -1,13 +1,13 @@
 class Juman
   class Morpheme
     def initialize(line)
-      attrs = line.split(/\s/)
-      @surface, @pronunciation, @base, @pos = attrs.shift(4)
+      attributes = line.split(/\s/)
+      @surface, @pronunciation, @base, @pos = attributes.shift(4)
       @pos_id, @pos_spec_id, @type_id, @form_id =
-        attrs.values_at(0, 2, 4, 6).map{|id_str| id_str.to_i }
+        attributes.values_at(0, 2, 4, 6).map{|id_str| id_str.to_i }
       @pos_spec, @type, @form =
-        attrs.values_at(1, 3, 5).map{|attr| normalize_attr(attr) }
-      @info = normalize_info(attrs[7..-1].join(' '))
+        attributes.values_at(1, 3, 5).map{|attr| normalize_attr(attr) }
+      @info = normalize_info(attributes[7..-1].join(' '))
     end
     attr_reader :surface, :pronunciation, :base, :pos, :pos_id, :pos_spec,
       :pos_spec_id, :type, :type_id, :form, :form_id, :info
