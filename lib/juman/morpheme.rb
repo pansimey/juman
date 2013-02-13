@@ -3,14 +3,11 @@ class Juman
     def initialize(line)
       attrs = line.split(/\s/)
       @surface, @pronunciation, @base, @pos = attrs.shift(4)
-      @pos_id = attrs.shift.to_i
-      @pos_spec = normalize_attr(attrs.shift)
-      @pos_spec_id = attrs.shift.to_i
-      @type = normalize_attr(attrs.shift)
-      @type_id = attrs.shift.to_i
-      @form = normalize_attr(attrs.shift)
-      @form_id = attrs.shift.to_i
-      @info = normalize_info(attrs.join(' '))
+      @pos_id, @pos_spec_id, @type_id, @form_id =
+        attrs.values_at(0, 2, 4, 6).map{|id_str| id_str.to_i }
+      @pos_spec, @type, @form =
+        attrs.values_at(1, 3, 5).map{|attr| normalize_attr(attr) }
+      @info = normalize_info(attrs[7..-1].join(' '))
     end
     attr_reader :surface, :pronunciation, :base, :pos, :pos_id, :pos_spec,
       :pos_spec_id, :type, :type_id, :form, :form_id, :info
