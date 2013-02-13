@@ -6,7 +6,9 @@ class Juman
     end
 
     def each(*args, &block)
+      return @morphemes.each(*args) unless block_given?
       @morphemes.each(*args, &block)
+      return self
     end
 
     def [](nth)
