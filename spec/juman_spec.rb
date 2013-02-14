@@ -47,8 +47,8 @@ describe Juman::Result do
       end
       context 'with block' do
         subject { @result.each{} }
-        it 'should return Array' do
-          should be_an_instance_of Array
+        it 'should return self' do
+          should be @result
         end
       end
     end

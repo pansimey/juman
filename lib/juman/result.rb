@@ -5,8 +5,10 @@ class Juman
       @morphemes = lines.map{|line| Morpheme.new(line) }.freeze
     end
 
-    def each(*args, &block)
-      @morphemes.each(*args, &block)
+    def each(&block)
+      return self.to_enum unless block_given?
+      @morphemes.each(&block)
+      return self
     end
 
     def [](nth)
