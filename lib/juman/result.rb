@@ -2,7 +2,7 @@ class Juman
   class Result
     include Enumerable
     def initialize(lines)
-      @morphemes = lines.map{|line| Morpheme.new(line) }.freeze
+      @morphemes = lines.map{|line| Morpheme.new(line) }
     end
 
     def each(&block)
