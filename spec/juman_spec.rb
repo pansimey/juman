@@ -22,9 +22,9 @@ describe Juman::Morpheme do
   end
 end
 describe Juman::Result do
-  context 'when initialized with an Array of the result of "見る"' do
+  context 'when initialized with an Enumerator of the result of "見る"' do
     before { @result = Juman::Result.new(
-      ['見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 "情 報"']) }
+      ["見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 \"情 報\""].to_enum) }
     subject { @result }
     it { should be_an Enumerable }
     it { should respond_to :each }
@@ -56,12 +56,11 @@ describe Juman::Result do
 end
 describe Juman::Process do
   before { @process = Juman::Process.new('juman -e2 -B') }
-  describe '#readlines' do
-    context 'when have written "見る"' do
-      before { @process.puts('見る') }
-      subject { @process.readlines }
-      it 'should return Array' do
-        should be_an_instance_of Array
+  describe '#parse_to_lines' do
+    context 'when argument "見る"' do
+      subject { @process.parse_to_lines('見る') }
+      it 'should return Enumerator' do
+        should be_an_instance_of Enumerator
       end
     end
   end
