@@ -6,7 +6,7 @@ require 'juman'
 describe Juman::Morpheme do
   context 'when initialized with a line of the result of "見る"' do
     subject { Juman::Morpheme.new(
-        '見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 "情 報"') }
+        "見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 \"情 報\"\n") }
     its(:surface){ should eq '見る' }
     its(:pronunciation){ should eq 'みる' }
     its(:base){ should eq '見る' }
