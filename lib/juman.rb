@@ -5,7 +5,7 @@ require 'juman/morpheme'
 
 class Juman
   def initialize
-    @process = Process.new('juman -e2 -B')
+    @process = Process.new('juman -b -e2')
   end
 
   def analyze(text)
