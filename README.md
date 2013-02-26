@@ -1,4 +1,4 @@
-# Juman
+# Juman [![Build Status](https://travis-ci.org/hadzimme/juman.png)](https://travis-ci.org/hadzimme/juman)
 
 Use a sequence of morphemes as an Enumerable object.
 
