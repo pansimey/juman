@@ -9,6 +9,6 @@ class Juman
   end
 
   def analyze(text)
-    Result.new(@process.parse_to_lines(text))
+    Result.new(@process.parse_to_enum(text))
   end
 end

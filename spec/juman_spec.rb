@@ -56,9 +56,9 @@ describe Juman::Result do
 end
 describe Juman::Process do
   before { @process = Juman::Process.new('juman -e2 -B') }
-  describe '#parse_to_lines' do
+  describe '#parse_to_enum' do
     context 'when argument "見る"' do
-      subject { @process.parse_to_lines('見る') }
+      subject { @process.parse_to_enum('見る') }
       it 'should return Enumerator' do
         should be_an_instance_of Enumerator
       end

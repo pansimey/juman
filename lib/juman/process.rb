@@ -4,7 +4,7 @@ class Juman
       @io = IO.popen(command, 'r+')
     end
 
-    def parse_to_lines(text)
+    def parse_to_enum(text)
       @io.puts(text)
       Enumerator.new do |y|
         until @io.gets[/^EOS$/]
