@@ -3,6 +3,8 @@
 require 'rspec'
 require 'juman'
 
+ENV['PATH'] = "#{File.expand_path(File.dirname(__FILE__))}:#{ENV['PATH']}"
+
 describe Juman::Morpheme do
   context 'when initialized with a line of the result of "見る"' do
     subject { Juman::Morpheme.new(

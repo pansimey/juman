@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+opt = OptionParser.new
+opt.on('-e2')
+opt.on('-B')
+opt.parse!(ARGV)
+
+gets
+puts <<JUMAN
+見る みる 見る 動詞 2 * 0 母音動詞 1 基本形 2 "代表表記:見る/みる 補文ト 自他動詞:自:見える/みえる"
+EOS
+JUMAN
