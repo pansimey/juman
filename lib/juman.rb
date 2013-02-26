@@ -9,6 +9,6 @@ class Juman
   end
 
   def analyze(text)
-    return Result.new(@process.parse_to_lines(text))
+    Result.new(@process.parse_to_lines(text))
   end
 end

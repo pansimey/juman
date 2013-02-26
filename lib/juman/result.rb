@@ -6,13 +6,16 @@ class Juman
     end
 
     def each(&block)
-      return self.to_enum unless block_given?
-      @morphemes.each(&block)
-      return self
+      if block_given?
+        @morphemes.each(&block)
+        self
+      else
+        self.to_enum
+      end
     end
 
     def [](nth)
-      return @morphemes[nth]
+      @morphemes[nth]
     end
 
     alias at []

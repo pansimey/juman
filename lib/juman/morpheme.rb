@@ -15,17 +15,17 @@ class Juman
     private
     def normalize_attr(candidate)
       if candidate == '*'
-        return nil
+        nil
       else
-        return candidate
+        candidate
       end
     end
 
     def normalize_info(candidate)
       if candidate == 'NIL'
-        return nil
+        nil
       else
-        return eval(candidate)
+        eval(candidate)
       end
     end
   end

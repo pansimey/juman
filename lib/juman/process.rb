@@ -6,7 +6,7 @@ class Juman
 
     def parse_to_lines(text)
       @io.puts(text)
-      return Enumerator.new do |y|
+      Enumerator.new do |y|
         until @io.gets[/^EOS$/]
           y << $_
         end
